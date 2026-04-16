@@ -3,75 +3,269 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GoGLOW - Premium Portal</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>KIAGLOW - Premium Beauty Experience</title>
     <style>
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
-        body { 
-            background: radial-gradient(circle at center, #1a1a1a 0%, #0d0d0d 100%); 
-            display: flex; justify-content: center; align-items: center; 
-            min-height: 100vh; padding: 20px; color: #fff;
+        :root {
+            --accent-gold: #d4a373; /* Rose Gold/Bronze */
+            --soft-cream: #faf3e0;
+            --deep-brown: #582f0e;
+            --white: #ffffff;
+            --shadow: 0 8px 30px rgba(0,0,0,0.08);
         }
-        .container { 
-            background: rgba(255, 255, 255, 0.03); padding: 40px; border-radius: 30px; 
-            border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 20px 50px rgba(0,0,0,0.5); 
-            text-align: center; width: 100%; max-width: 420px; backdrop-filter: blur(10px); 
+
+        body {
+            font-family: 'Playfair Display', serif; /* Font elegan */
+            background-color: #fcf8f4;
+            margin: 0;
+            color: var(--deep-brown);
         }
-        h2 { color: #f1c40f; margin-bottom: 8px; font-size: 32px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; }
-        .form-box { margin-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 30px; }
-        input { 
-            width: 100%; padding: 14px 20px; margin-bottom: 15px; background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 50px; color: #fff; outline: none;
+
+        .app-container {
+            max-width: 480px;
+            margin: 0 auto;
+            background: var(--white);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
         }
-        .btn-regis { 
-            width: 100%; background: linear-gradient(135deg, #f1c40f 0%, #f39c12 100%); 
-            color: #111; border: none; padding: 16px; border-radius: 50px; font-weight: 700; cursor: pointer;
+
+        header {
+            background: linear-gradient(135deg, #d4a373 0%, #faedcd 100%);
+            color: var(--deep-brown);
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 0 0 40px 40px;
+            box-shadow: var(--shadow);
         }
-        .btn-upload {
-            display: none; width: 100%; background: #2ecc71; color: #fff; 
-            padding: 16px; border-radius: 50px; font-weight: 700; text-decoration: none; margin-top: 20px;
+
+        header h1 {
+            margin: 0;
+            letter-spacing: 4px;
+            font-size: 2.2em;
+            text-transform: uppercase;
         }
+
+        .card {
+            background: white;
+            margin: -20px 20px 20px 20px;
+            padding: 25px;
+            border-radius: 25px;
+            box-shadow: var(--shadow);
+            position: relative;
+            z-index: 10;
+        }
+
+        .section-title {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: var(--accent-gold);
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* AI Chat Box */
+        #chat-container {
+            height: 250px;
+            overflow-y: auto;
+            padding: 15px;
+            background: #fdfaf7;
+            border-radius: 15px;
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            font-size: 14px;
+        }
+
+        .msg { padding: 12px 16px; border-radius: 20px; max-width: 85%; line-height: 1.4; }
+        .user-msg { background: var(--accent-gold); color: white; align-self: flex-end; border-bottom-right-radius: 2px; }
+        .ai-msg { background: #eeece8; align-self: flex-start; border-bottom-left-radius: 2px; }
+
+        .input-group {
+            display: flex;
+            gap: 8px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 15px;
+            border: 1px solid #e0d8cf;
+            border-radius: 30px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .btn-send {
+            background: var(--deep-brown);
+            color: white;
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+        }
+
+        /* Products Section */
+        .product-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .product-item {
+            background: #fff;
+            border: 1px solid #f0ece3;
+            padding: 10px;
+            border-radius: 15px;
+            text-align: center;
+        }    <section style="padding: 0 20px 20px 20px;">
+            <span class="section-title" style="margin-left: 5px;">Katalog Produk KIAGLOW</span>
+            <div class="product-grid">
+                
+                <div class="product-item">
+                    <div style="background: #fdf2f4; padding: 10px; border-radius: 10px;">
+                        <span style="font-size: 30px;">🧴</span> </div>
+                    <span style="font-weight: bold; margin-top: 8px;">KIAGLOW Serum</span>
+                    <span style="color: var(--accent-gold); font-size: 13px;">Rp 125.000</span>
+                    <a href="https://wa.me/628123456789?text=Saya%20mau%20pesan%20Serum%20KIAGLOW" 
+                       style="display:block; background:var(--deep-brown); color:white; text-decoration:none; font-size:12px; padding:5px; border-radius:5px; margin-top:8px;">Beli Sekarang</a>
+                </div>
+
+                <div class="product-item">
+                    <div style="background: #fdf2f4; padding: 10px; border-radius: 10px;">
+                        <span style="font-size: 30px;">🧼</span>
+                    </div>
+                    <span style="font-weight: bold; margin-top: 8px;">Glow Facial Wash</span>
+                    <span style="color: var(--accent-gold); font-size: 13px;">Rp 85.000</span>
+                    <a href="https://wa.me/628123456789?text=Saya%20mau%20pesan%20Facial%20Wash%20KIAGLOW" 
+                       style="display:block; background:var(--deep-brown); color:white; text-decoration:none; font-size:12px; padding:5px; border-radius:5px; margin-top:8px;">Beli Sekarang</a>
+                </div>
+
+                </div>
+        </section>
+
+        .product-item span { font-size: 12px; display: block; margin-top: 5px; }
+
+        .footer-action {
+            margin-top: auto;
+            padding: 25px;
+            background: #fafafa;
+        }
+
+        .btn-wa {
+            background: #128c7e;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            padding: 18px;
+            border-radius: 35px;
+            font-weight: bold;
+            display: block;
+            box-shadow: 0 4px 15px rgba(18, 140, 126, 0.3);
+            transition: 0.3s;
+        }
+
+        .loading { font-size: 12px; color: var(--accent-gold); display: none; margin-bottom: 5px; text-align: center; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h2>GoGLOW</h2>
-    <div class="form-box" id="regisSection">
-        <h3 style="margin-bottom:20px">Daftar & Upload</h3>
-        <input type="text" id="nama" placeholder="Nama Lengkap">
-        <input type="email" id="email" placeholder="Alamat Email">
-        <button class="btn-regis" onclick="prosesDaftar()">AJUKAN & UPLOAD VIDEO</button>
-    </div>
-    
-    <div id="uploadSection" style="display:none; margin-top: 30px;">
-        <h3 style="color:#2ecc71">Pendaftaran Berhasil!</h3>
-        <p style="margin: 15px 0; font-size: 14px; color: #aaa;">Klik tombol di bawah untuk mengunggah video Anda ke Google Drive kami.</p>
-        <a id="driveLink" href="#" target="_blank" class="btn-upload" style="display:block">UNGGAH VIDEO KE DRIVE</a>
+<div class="app-container">
+    <header>
+        <h1>KIAGLOW</h1>
+        <p style="font-style: italic; opacity: 0.9;">Your Personal Skincare Expert</p>
+    </header>
+
+    <main>
+        <div class="card">
+            <span class="section-title">Konsultasi AI</span>
+            <div id="chat-container">
+                <div class="msg ai-msg">Selamat datang di <b>KIAGLOW</b>. Ceritakan masalah kulit Anda, saya siap membantu.</div>
+            </div>
+            <div id="loading-text" class="loading"><i>KIAGLOW AI sedang meracik jawaban...</i></div>
+            <div class="input-group">
+                <input type="text" id="user-input" placeholder="Tulis keluhan Anda...">
+                <button class="btn-send" onclick="askGemini()">➤</button>
+            </div>
+        </div>
+
+        <section style="padding: 0 20px 20px 20px;">
+            <span class="section-title" style="margin-left: 5px;">Rekomendasi KIAGLOW</span>
+            <div class="product-grid">
+                <div class="product-item">
+                    <div style="font-size: 24px;">🧴</div>
+                    <span>Face Serum</span>
+                </div>
+                <div class="product-item">
+                    <div style="font-size: 24px;">🧼</div>
+                    <span>Glow Wash</span>
+                </div>
+                <div class="product-item">
+                    <div style="font-size: 24px;">☀️</div>
+                    <span>Sun Protection</span>
+                </div>
+                <div class="product-item">
+                    <div style="font-size: 24px;">🌙</div>
+                    <span>Night Cream</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div class="footer-action">
+        <a href="https://wa.me/6285773292826?text=Halo%20KIAGLOW,%20saya%20ingin%20pesan%20produk" class="btn-wa">HUBUNGI ADMIN (WA)</a>
     </div>
 </div>
 
 <script>
-    function prosesDaftar() {
-        const nomorWA = "6285773292826"; // Ganti nomor Anda
-        const linkDrive = "https://drive.google.com/drive/folders/11x5ERBbMh_CzpDqannpPzQwcOQ5t-KRK"; // Ganti link Drive Anda
-        
-        const nama = document.getElementById('nama').value;
-        const email = document.getElementById('email').value;
+    // MASUKKAN API KEY GEMINI ANDA DI SINI
+    const API_KEY = "MASUKKAN_API_KEY_ANDA_DI_SINI"; 
 
-        if(nama === "" || email === "") {
-            alert("Isi data dulu ya!");
-            return;
+    async function askGemini() {
+        const inputField = document.getElementById('user-input');
+        const chatContainer = document.getElementById('chat-container');
+        const loadingText = document.getElementById('loading-text');
+        const userMsg = inputField.value;
+
+        if (!userMsg) return;
+
+        appendMessage(userMsg, 'user-msg');
+        inputField.value = "";
+        loadingText.style.display = "block";
+
+        try {
+            const response = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`, {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    contents: [{
+                        parts: [{ text: `Kamu adalah asisten profesional dari brand skincare KIAGLOW. Jawab pertanyaan user dengan gaya bahasa yang elegan, sopan, dan ahli dalam kecantikan. Bantu mereka memberikan solusi skincare yang tepat: ${userMsg}` }]
+                    }]
+                })
+            });
+
+            const data = await response.json();
+            const aiReply = data.candidates[0].content.parts[0].text;
+            
+            loadingText.style.display = "none";
+            appendMessage(aiReply, 'ai-msg');
+        } catch (error) {
+            loadingText.style.display = "none";
+            appendMessage("Maaf, layanan KIAGLOW AI sedang istirahat sebentar.", 'ai-msg');
         }
+    }
 
-        // 1. Kirim WA di tab baru
-        const teks = `Halo Admin GoGLOW, saya ${nama} sudah daftar dan ingin upload video.`;
-        window.open(`https://wa.me/${nomorWA}?text=${teks}`, '_blank');
-
-        // 2. Munculkan tombol upload
-        document.getElementById('regisSection').style.display = 'none';
-        document.getElementById('uploadSection').style.display = 'block';
-        document.getElementById('driveLink').href = linkDrive;
+    function appendMessage(text, className) {
+        const chatContainer = document.getElementById('chat-container');
+        const msgDiv = document.createElement('div');
+        msgDiv.className = `msg ${className}`;
+        msgDiv.innerHTML = text;
+        chatContainer.appendChild(msgDiv);
+        chatContainer.scrollTop = chatContainer.scrollHeight;
     }
 </script>
 
